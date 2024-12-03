@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div id="main">
+    <div id="content">
+        <h1>Found {{ num_results }} result(s) with "{{ search_string }}" (only display maximum 4 results) ...</h1>
+        <div id="category">
+            {% set counter = 0 %}
+            {% for job in job_search %}
+            {% if counter < 4 %}
+            <div>
+                <h3><a id="link-{{ counter + 1 }}" href="/job/{{ job.custom_index }}">{{ job.job_title }}</a></h3>
+                <p id="data-embed-{{ counter + 1 }}">{{ job.job_desc[:400] }}{{ '...' if job.job_desc|length > 400 else '' }}</p>
+            </div>
+            {% set counter = counter + 1 %}
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

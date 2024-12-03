@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block body %}
+<form action="/classify" method="POST">
+    <h2><span>ENTER JOB DETAILS TO CLASSIFY OR SAVE</span></h2>
+    <p><strong>Enter Title:</strong></p>
+    <p><input type="text" name="title" style="width:100%" value="{{ title }}" required /></p>
+    <p><strong>Enter Description:</strong></p>
+    <textarea type="text" name="description" style="height:200px; width:100%" required>{{ description }}</textarea>
+    <p><strong>Enter Salary:</strong></p>
+    <p><input type="text" name="salary" style="width:25%" value="{{ salary }}" required /></p>
+    <p>
+        <span><strong>Click to predict the job category:</strong></span>
+        <input type="submit" id="button-style" name="button" value="Classify" />
+    </p>
+    <p>
+        <span><strong><label for="file">Recommended Category:</label></strong></span>
+        <input type="text" id="rec_category" name="category" value="{{ prediction }}">
+    </p>
+    <p>
+        <span><strong>Select Category:</strong></span>
+        <select id="category_selector" name="selected_category">
+            <option value="Engineering">Engineering</option>
+            <option value="Sales">Sales</option>
+            <option value="Accounting_Finance">Accounting_Finance</option>
+            <option value="Healthcare_Nursing">Healthcare_Nursing</option>
+        </select>
+    </p>
+    <p style="color:red"> {{ category_flag }} </p>
+
+    <input type="submit" id="button-style" class="button-align" name="button" value="Save">
+</form>
+
+<script>
+    // Add JavaScript to display a confirmation alert
+    document.getElementById("category_selector").addEventListener("change", function () {
+        var selectedCategory = this.value;
+        var recommendedCategory = document.getElementById("rec_category").value;
+
+        if (recommendedCategory !== selectedCategory) {
+            var confirmChange = confirm("Recommended category is overridden by the selected category. Do you want to proceed?");
+            if (!confirmChange) {
+                // Revert to the recommended category
+                this.value = recommendedCategory;
+            }
+            else {
+                document.getElementById("rec_category").value = this.value;
+            }
+        }
+    });
+</script>
+{% endblock %}
+
+{% block script %}
+{% endblock %}

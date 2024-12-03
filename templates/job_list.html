@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div id="main">
+    <h2 id="data-title" class="title">{{ category|upper }} JOBS</h2>
+    <div class="data-article" id="data-content">
+        <ul class="job-list">
+            {% for job in jobs %}
+            <div class="job-entry">
+                <div class="job-card">
+                    <h4 class="job-title">{{ job.job_title|upper }}</h4>
+                    <p class="job-description">{{ job.job_desc[:400] }}{{ '...' if job.job_desc|length > 400 else '' }}</p>
+                    <a href="/job/{{ job.custom_index }}" class="job-details-link">Click here for more info</a>
+                </div>
+            </div>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

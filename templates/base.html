@@ -1,0 +1,40 @@
+<!DOCTYPE html">
+<html>
+
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" type="text/css" media="all" />
+    <script src="{{ url_for('static', filename='jquery-3.6.0.js') }}"></script>
+</head>
+
+<body>
+    <div style="float:right;text-align:left">
+        <form action="/search" method="POST">
+            <input type="text" name="searchword" class="field" />
+            <input type="submit" id="button-style" name="search" value="Search" class="submit" />
+        </form>
+    </div>
+
+    <h1 class="title"> <a href="/"> FIND YOUR JOB! </a></h1>
+
+    <div class="navbar">
+        <ul id="job_nav">
+            <li> <a href="/sales"> Sales </a> </li>
+            <li> <a href="/healthcare"> Healthcare </a> </li>
+            <li> <a href="/engineering"> Engineering </a> </li>
+            <li> <a href="/accounting"> Accounting </a> </li>
+            <div class="topnav-right">
+                <li> <a href="/classify"> Add or Classify Job </a> </li>
+            </div>
+
+        </ul>
+    </div>
+
+    {% block body %}
+    {% endblock %}
+
+    {% block script %}
+    {% endblock %}
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div id="main">
+    <h2 id="data-title">{{ job.job_title|upper }}</h2>
+    <div class="job-details">
+        <div class="job-description">
+            <h3>JOB DESCRIPTION:</h3>
+            <p>{{ job.job_desc }}</p>
+            <p>
+                <span style="font-weight:bold">SALARY IN POUNDS:</span>
+                <span>{{ job.job_salary }}</span>
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
