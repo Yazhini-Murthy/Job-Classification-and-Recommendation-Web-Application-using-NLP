@@ -1,0 +1,147 @@
+.title {
+  color: midnightblue;
+}
+
+a:link,
+a:visited {
+  color: midnightblue;
+  text-decoration: none;
+}
+
+a:hover {
+  color: midnightblue;
+}
+
+a:active {
+  color: midnightblue;
+}
+
+#job_nav {
+  list-style-type: none;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 0px;
+  padding-left: 0px;
+  overflow: hidden;
+  background-color: lightsteelblue;
+  font-size: 18px;
+}
+
+#job_nav a {
+  display: inline;
+  margin-right: 20px;
+  transition: background-color 0.2s;
+}
+
+#job_nav a {
+  text-decoration: none;
+}
+
+#job_nav li:hover a {
+  background-color: #c6c7ced5;
+  /* Change the background color of the link on hover */
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.topnav-right {
+  float: right;
+}
+
+#border-adjust {
+  margin-top: 0px;
+}
+
+#title-adjust {
+  text-align: center;
+}
+
+.job-details-link {
+  color: black;
+  font-weight: 800;
+  text-align: right;
+}
+
+
+.job-title {
+  font-size: 18px;
+  margin: 0;
+  text-align: center;
+}
+
+.job-description {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.job-description p {
+  font-size: 16px;
+  color: #333;
+}
+
+.job-details-link {
+  text-align: right;
+  align-self: flex-end;
+  font-size: 16px;
+  color: #1c4a7b;
+  text-decoration: none;
+}
+
+.job-details-link:hover {
+  text-decoration: underline;
+}
+
+#button-style {
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button-align {
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  background-color: midnightblue;
+  /* Blue background color */
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.button-align:hover {
+  background-color: rgb(72, 72, 215);
+  /* Darker blue color on hover */
+}
+
+.job-card {
+  background-color: #f0f8ff;
+  /* Mild blue background color */
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.job-card:hover {
+  background-color: lightsteelblue;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: lightsteelblue;
+  z-index: 100;
+}
